@@ -12,9 +12,7 @@ import { register, login, getMe } from "./controllers/userController.js";
 import handleValidationErrors from "./utils/handleValidationErrors.js";
 
 mongoose
-  .connect(
-    "mongodb+srv://andygrigs:mongodb@cluster0.oqde8aw.mongodb.net/course-data?retryWrites=true&w=majority"
-  )
+  .connect(process.env.mongoDB)
   .then(() => {
     console.log("db works");
   })
