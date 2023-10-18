@@ -1,6 +1,7 @@
 import express from "express";
 import multer from "multer";
 import cors from "cors";
+import dotenv from "dotenv";
 
 import mongoose from "mongoose";
 
@@ -11,6 +12,7 @@ import checkAuth from "./utils/checkAuth.js";
 import { register, login, getMe } from "./controllers/userController.js";
 import handleValidationErrors from "./utils/handleValidationErrors.js";
 
+dotenv.config();
 mongoose
   .connect(process.env.mongoDB)
   .then(() => {
