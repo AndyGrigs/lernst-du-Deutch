@@ -3,8 +3,8 @@ import cls from "./ThemeSwitcher.module.scss";
 import { Theme } from "@/app/Theme/ui";
 import { useTheme } from "@/app/Theme/ui";
 import { Button, ThemeButton } from "../../Button/Button";
-import LightIcon from "@/assets/icons/sun_.svg";
-import DarkIcon from "@/assets/icons/moon_.svg";
+import Moon from "@/assets/mode-dark-svgrepo-com.svg";
+import { Icon } from "../../Icon";
 
 export interface ThemeSwitcherProps {
   className?: string;
@@ -19,7 +19,11 @@ export const ThemeSwitcher = ({ className }: ThemeSwitcherProps) => {
         className={classNames(cls.ThemeSwitcher, {}, [className])}
         onClick={toggleTheme}
       >
-        {theme === Theme.DARK ? "L" : "D"}
+        {theme === Theme.DARK ? (
+          <Icon src={Moon} alt="dark mode" />
+        ) : (
+          <Icon src={Moon} alt="dark mode" />
+        )}
       </Button>
     </>
   );
