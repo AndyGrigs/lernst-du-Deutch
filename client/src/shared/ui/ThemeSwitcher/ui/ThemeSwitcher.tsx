@@ -3,8 +3,12 @@ import cls from "./ThemeSwitcher.module.scss";
 import { Theme } from "@/app/Theme/ui";
 import { useTheme } from "@/app/Theme/ui";
 import { Button, ThemeButton } from "../../Button/Button";
-import Moon from "@/assets/mode-dark-svgrepo-com.svg";
 import { Icon } from "../../Icon";
+
+export interface ThemeSwitcherProps {
+  className?: string;
+}
+
 
 export interface ThemeSwitcherProps {
   className?: string;
@@ -12,6 +16,8 @@ export interface ThemeSwitcherProps {
 
 export const ThemeSwitcher = ({ className }: ThemeSwitcherProps) => {
   const [theme, toggleTheme] = useTheme();
+  const isLightTheme = theme !== Theme.DARK;
+
   return (
     <>
       <Button
@@ -19,12 +25,9 @@ export const ThemeSwitcher = ({ className }: ThemeSwitcherProps) => {
         className={classNames(cls.ThemeSwitcher, {}, [className])}
         onClick={toggleTheme}
       >
-        {theme === Theme.DARK ? (
-          <Icon src={Moon} alt="dark mode" />
-        ) : (
-          <Icon src={Moon} alt="dark mode" />
-        )}
+        <Icon theme={isLightTheme ? Theme.LIGHT : Theme.DARK} />
       </Button>
     </>
   );
 };
+

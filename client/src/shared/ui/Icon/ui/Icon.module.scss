@@ -1,4 +1,6 @@
-.Icon {
-  width: 40px; // Set the desired width
-  height: auto;
-}
+
+  .Icon {
+    fill: var(--primary-color);
+    height: var(--font-size-m); 
+    width: var(--font-size-m);
+  }
