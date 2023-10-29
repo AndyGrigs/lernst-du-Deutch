@@ -4,13 +4,14 @@ import App from "./app/App.js";
 import { BrowserRouter } from "react-router-dom";
 import ThemeProvider from "./app/Theme/ui/ThemeProvider.js";
 import "./app/styles/index.scss";
+import { StoreProvider } from "./app/providers/StoreProvider/index.js";
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
-  <React.StrictMode>
+  <StoreProvider>
     <BrowserRouter>
       <ThemeProvider>
         <App />
       </ThemeProvider>
     </BrowserRouter>
-  </React.StrictMode>
+  </StoreProvider>
 );
