@@ -8,6 +8,8 @@ interface IconProps {
 }
 
 export const Icon: React.FC<IconProps> = ({ className, theme }) => {
+  console.log(theme);
+
   return (
     <div>
 

@@ -2,7 +2,8 @@ import AppRouter from "./Router/ui/AppRouter";
 import { Navbar } from "@/widgets/Navbar/ui/Navbar";
 import { classNames } from "@/shared/lib/classNames";
 import { useTheme } from "./Theme/ui";
-import Logo from "@/assets/arrow-small-left-svgrepo-com.svg?react";
+import { Sidebar } from "@/widgets/Sidebar";
+
 
 
 const App: React.FC = () => {
@@ -12,7 +13,7 @@ const App: React.FC = () => {
     <div className={classNames("app", {}, [theme])}>
       <Navbar />
       <AppRouter />
-      <Logo />
+      <Sidebar />
     </div>
   );
 };
