@@ -1,21 +1,18 @@
+.Sidebar {
+  height: calc(100vh - var(--navbar-height));
+  width: var(--sidebar-width);
+  background: var(--secondary-color);
+  position: relative;
+  transition: width 0.3s;
+}
 
-    .Sidebar{
-        height: calc( 100vh - var(--navbar-height));
-        width: var(--sidebar-width);
-        background: red;
-        // background: var(--inverted-secondary-color);
-        position: relative;
-        transition: width 0.3s;
-        .collapsed{
-            width: var(--sidebar-width-collapsed);
-        }
-    }
-    
-   
+.collapsed {
+  width: var(--sidebar-width-collapsed);
+}
 
-   
-
-
-.arrow{
-    fill: red;
+.arrow {
+  stroke: var(--primary-color);
+  height: var(--font-size-xl);
+  width: var(--font-size-xl);
+  padding: var(--app-margin);
 }

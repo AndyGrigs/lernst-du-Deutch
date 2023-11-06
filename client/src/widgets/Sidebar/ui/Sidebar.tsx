@@ -4,6 +4,7 @@ import { classNames } from "@/shared/lib/classNames";
 import ArrowRight from "@/assets/arrow-small-right-svgrepo-com.svg?react";
 import ArrowLeft from "@/assets/arrow-small-left-svgrepo-com.svg?react";
 import { useTheme } from "@/app/Theme/ui";
+import { Theme } from "@/app/Theme/ui";
 
 export interface SidebarProps {
   className?: string;
@@ -12,6 +13,7 @@ export interface SidebarProps {
 export const Sidebar = ({ className }: SidebarProps) => {
   const [collapsed, setCollapsed] = useState(false);
   const [theme] = useTheme();
+  const isLightTheme = theme != Theme.DARK;
 
   const toogle = () => {
     setCollapsed((prev) => !prev);
@@ -23,7 +25,17 @@ export const Sidebar = ({ className }: SidebarProps) => {
         className,
       ])}
     >
-      <ArrowRight />
+      {collapsed ? (
+        <ArrowRight
+          onClick={toogle}
+          className={classNames(cls.arrow, {}, [className, cls[theme]])}
+        />
+      ) : (
+        <ArrowLeft
+          onClick={toogle}
+          className={classNames(cls.arrow, {}, [className, cls[theme]])}
+        />
+      )}
     </div>
   );
 };
