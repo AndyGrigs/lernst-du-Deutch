@@ -2,13 +2,12 @@ import { classNames } from "@/shared/lib/classNames";
 import cls from "./ThemeSwitcher.module.scss";
 import { Theme } from "@/app/Theme/ui";
 import { useTheme } from "@/app/Theme/ui";
-import { Button, ThemeButton } from "../../Button/Button";
+import { Button, ButtonTheme } from "../../Button/Button";
 import { Icon } from "../../Icon";
 
 export interface ThemeSwitcherProps {
   className?: string;
 }
-
 
 export interface ThemeSwitcherProps {
   className?: string;
@@ -21,7 +20,7 @@ export const ThemeSwitcher = ({ className }: ThemeSwitcherProps) => {
   return (
     <>
       <Button
-        theme={ThemeButton.CLEAR}
+        theme={ButtonTheme.CLEAR}
         className={classNames(cls.ThemeSwitcher, {}, [className])}
         onClick={toggleTheme}
       >
@@ -30,4 +29,3 @@ export const ThemeSwitcher = ({ className }: ThemeSwitcherProps) => {
     </>
   );
 };
-

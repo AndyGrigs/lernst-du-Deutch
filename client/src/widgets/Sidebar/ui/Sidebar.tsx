@@ -28,12 +28,18 @@ export const Sidebar = ({ className }: SidebarProps) => {
       {collapsed ? (
         <ArrowRight
           onClick={toogle}
-          className={classNames(cls.arrow, {}, [className, cls[theme]])}
+          className={classNames(cls.arrow, { isLightTheme }, [
+            className,
+            cls[theme],
+          ])}
         />
       ) : (
         <ArrowLeft
           onClick={toogle}
-          className={classNames(cls.arrow, {}, [className, cls[theme]])}
+          className={classNames(cls.arrow, { isLightTheme }, [
+            className,
+            cls[theme],
+          ])}
         />
       )}
     </div>

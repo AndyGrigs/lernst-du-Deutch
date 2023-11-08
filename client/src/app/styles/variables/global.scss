@@ -10,10 +10,17 @@
   --font-size-xl: 40px;
   --font-line-xl: 48px;
   --font-l: var(--font-size-l) / var(--font-line-l) var(--font-family-main);
+  //sizes
   --navbar-height: 60px;
   --sidebar-width: 300px;
   --sidebar-width-collapsed: 60px;
 
   --app-padding: 0.5em;
   --app-margin: 0.5em;
+
+  // z index
+  --modal-z-index: 10;
+
+  // colors
+  --overlay-color: rgba(0 0 0 / 60%);
 }

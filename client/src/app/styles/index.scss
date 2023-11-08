@@ -3,11 +3,13 @@
 @import "themes/dark";
 @import "themes/light";
 
-.app {
+body {
   font: var(--font-m);
-  background: var(--bg-color);
-
   color: var(--primary-color);
+}
+
+.app {
+  background: var(--bg-color);
   min-height: 100vh;
 }
 
@@ -18,16 +20,4 @@
 .page-wrapper {
   flex-grow: 1;
   padding: 20px;
-}
-
-.switchers {
-  position: absolute;
-  bottom: 10px;
-  display: flex;
-  justify-content: center;
-  width: 100%;
-}
-
-.arrow * {
-  fill: red;
 }

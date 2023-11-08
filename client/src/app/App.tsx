@@ -1,5 +1,5 @@
 import AppRouter from "./Router/ui/AppRouter";
-import { Navbar } from "@/widgets/Navbar/ui/Navbar";
+import { Navbar } from "@/widgets/Navbar";
 import { classNames } from "@/shared/lib/classNames";
 import { useTheme } from "./Theme/ui";
 import { Sidebar } from "@/widgets/Sidebar";
