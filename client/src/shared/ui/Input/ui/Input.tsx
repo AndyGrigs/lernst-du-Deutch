@@ -1,39 +1,43 @@
-import React, { FC } from "react";
+import { ChangeEvent, InputHTMLAttributes, memo } from "react";
 import cls from "./Input.module.scss";
 import { classNames } from "@/shared/lib/classNames";
 
-export enum InputTheme {
-    CLEAR = "clear",
-    OUTLINE = "outline",
-    BACKGROUND = "background",
-}
 
-export enum InputSize {
-    M = "size_m",
-    L = "size_l",
-    XL = "size_xl",
-}
+type HTMLInputProps = Omit<InputHTMLAttributes<HTMLInputElement>, 'value' | 'onChange'>
 
-interface CustomInputProps {
+
+interface InputProps extends HTMLInputProps {
     className?: string;
-    theme?: InputTheme;
-    size?: string | number;
-    placeholder?: string; // Add the placeholder attribute
+    placeholder?: string;
+    value?: string;
+    onChange?: (value: string) => void;
 }
 
-type InputProps = CustomInputProps & React.InputHTMLAttributes<HTMLInputElement>;
 
-export const Input: FC<InputProps> = (props) => {
+
+export const Input = memo((props: InputProps) => {
     const {
         className,
-        theme,
-        size = InputSize.M as string,
+        placeholder,
+        value,
+        onChange,
+        type = "text",
         ...otherProps
     } = props;
+
+    const onChangeHandler = (e: ChangeEvent<HTMLInputElement>) => {
+        onChange?.(e.target.value)
+    }
+
     return (
-        <input
-            className={classNames(cls.Input, {}, [className, cls[theme]])}
-            {...otherProps}
-        />
+        <div className={classNames(cls.Input, {}, [className])}>
+            <input
+                placeholder={placeholder}
+                type={type}
+                value={value}
+                onChange={onChangeHandler}
+                {...otherProps}
+            />
+        </div>
     );
-};
+});

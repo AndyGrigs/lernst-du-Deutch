@@ -3,7 +3,7 @@ import {
   ThemeContext,
   Theme,
   LOKAL_STARAGE_THEME_KEY,
-} from "../lib/ThemeContext";
+} from "../Theme/lib/ThemeContext";
 
 interface ThemeProviderProps {
   children: React.ReactNode;
